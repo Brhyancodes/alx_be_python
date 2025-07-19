@@ -1,9 +1,9 @@
-# Get user input
-task = input("Enter a task for the daily reminder: ")
-task_priority = input("Enter the priority of the task (high/medium/low): ").lower()
-time_bound = input("Is this task time-bound? (yes/no): ").lower()
+# Prompt for task information
+task = input("Enter your task: ")
+task_priority = input("Priority (high/medium/low): ").lower()
+time_bound = input("Is it time-bound? (yes/no): ").lower()
 
-# Use match-case to handle priority
+# Process the task
 match task_priority:
     case "high":
         if time_bound == "yes":
