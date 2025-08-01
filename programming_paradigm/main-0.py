@@ -10,16 +10,14 @@ def main():
         print("Commands: deposit, withdraw, display")
         sys.exit(1)
 
-    command, *params = sys.argv[1].split(":")
-    amount = float(params[0]) if params else None
+    command_parts = sys.argv[1].split(":")
+    command = command_parts[0].lower()
+    amount = float(command_parts[1]) if len(command_parts) > 1 else None
 
     if command == "deposit" and amount is not None:
         account.deposit(amount)
     elif command == "withdraw" and amount is not None:
-        if account.withdraw(amount):
-            print(f"Withdrew: ${amount}")
-        else:
-            print("Insufficient funds or invalid amount.")
+        account.withdraw(amount)
     elif command == "display":
         account.display_balance()
     else:

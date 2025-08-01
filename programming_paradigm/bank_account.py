@@ -24,9 +24,9 @@ class BankAccount:
         print(f"Current Balance: ${self.balance:.1f}")
 
 
-# Optional: Only runs when executing this file directly
+# Optional: You can include this block for standalone testing
 if __name__ == "__main__":
-    account = BankAccount(10000)
-    account.deposit(50000)
-    account.withdraw(30000)
+    account = BankAccount(1000)
+    account.deposit(500)
+    account.withdraw(200)
     account.display_balance()
