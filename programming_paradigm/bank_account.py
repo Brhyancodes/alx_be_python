@@ -25,8 +25,8 @@ class BankAccount:
 
 
 # Optional: You can include this block for standalone testing
-if __name__ == "__main__":
-    account = BankAccount(1000)
-    account.deposit(500)
-    account.withdraw(200)
-    account.display_balance()
+# if __name__ == "__main__":
+#     account = BankAccount(1000)
+#     account.deposit(500)
+#     account.withdraw(200)
+#     account.display_balance()
