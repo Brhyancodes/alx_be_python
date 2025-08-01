@@ -15,7 +15,7 @@ def main():
     amount = float(command_parts[1]) if len(command_parts) > 1 else None
 
     if command == "deposit" and amount is not None:
-        account.deposit(amount)
+        account.deposit(amount)  # ❌ Don't print here again!
     elif command == "withdraw" and amount is not None:
         account.withdraw(amount)
     elif command == "display":
