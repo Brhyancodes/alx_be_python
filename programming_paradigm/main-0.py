@@ -3,7 +3,7 @@ from bank_account import BankAccount
 
 
 def main():
-    account = BankAccount(100)  # Starting balance
+    account = BankAccount(100)
 
     if len(sys.argv) < 2:
         print("Usage: python main.py <command>:<amount>")
@@ -15,11 +15,15 @@ def main():
     amount = float(command_parts[1]) if len(command_parts) > 1 else None
 
     if command == "deposit" and amount is not None:
-        account.deposit(amount)  # ❌ Don't print here again!
+        account.deposit(amount)
+        print(f"Deposited: ${amount:.1f}")  # only one print
     elif command == "withdraw" and amount is not None:
-        account.withdraw(amount)
+        if account.withdraw(amount):
+            print(f"Withdrew: ${amount:.1f}")
+        else:
+            print("Insufficient funds or invalid amount.")
     elif command == "display":
-        account.display_balance()
+        print(account.display_balance())
     else:
         print("Invalid command.")
 
