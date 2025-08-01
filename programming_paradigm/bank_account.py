@@ -6,7 +6,7 @@ class BankAccount:
         if amount > 0:
             self.balance += amount
         else:
-            raise ValueError("Deposit amount must be positive.")
+            print("Deposit amount must be positive.")
 
     def withdraw(self, amount):
         if 0 < amount <= self.balance:
@@ -15,6 +15,5 @@ class BankAccount:
         else:
             return False
 
-
-def display_balance(self):
-    print(f"Current Balance: ${self.balance:.2f}")
+    def display_balance(self):
+        print(f"Current Balance: ${self.balance:.2f}")
