@@ -22,7 +22,7 @@ class EBook(Book):
         self.file_size = file_size  # in MB
 
     def __str__(self):
-        return f"EBook: {self.title} by {self.author}, Size: {self.file_size}MB"
+        return f"EBook: {self.title} by {self.author}, File Size: {self.file_size}KB"
 
     def display_info(self):
         return f"EBook: {self.title} by {self.author}, Size: {self.file_size}MB"
@@ -37,7 +37,9 @@ class PrintBook(Book):
         )
 
     def __str__(self):
-        return f"Print Book: {self.title} by {self.author}, Pages: {self.page_count}"
+        return (
+            f"PrintBook: {self.title} by {self.author}, Page Count: {self.page_count}"
+        )
 
     def display_info(self):
         return f"Print Book: {self.title} by {self.author}, Pages: {self.page_count}"
@@ -55,7 +57,6 @@ class Library:
     def add_book(self, book):
         if isinstance(book, Book):
             self.books.append(book)
-            print(f"Added: {book}")  # This will use __str__ method
         else:
             raise TypeError("Only instances of Book, EBook, or PrintBook can be added.")
 
@@ -64,10 +65,8 @@ class Library:
             print("No books in the library.")
             return
 
-        print("Library Books:")
-        print("-" * 40)
-        for i, book in enumerate(self.books, 1):
-            print(f"{i}. {book}")  # This will use __str__ method
+        for book in self.books:
+            print(book)  # Just print each book without numbering or headers
 
 
 # Example usage:
